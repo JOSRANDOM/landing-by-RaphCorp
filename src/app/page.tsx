@@ -1,4 +1,5 @@
-import { Navbar, ServiceCard, Footer, ContactForm } from "@/presentation/components";
+import { Navbar, ServiceCard, Footer, ContactForm, MaintenancePage } from "@/presentation/components";
+import { env } from "@/config/env";
 
 const services = [
   {
@@ -34,6 +35,10 @@ const services = [
 ];
 
 export default function Home() {
+  if (env.maintenanceMode) {
+    return <MaintenancePage />;
+  }
+
   return (
     <>
       <Navbar />
