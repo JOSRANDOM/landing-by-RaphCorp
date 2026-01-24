@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Landing",
-  description: "Landing page",
+  title: "Raph-Corp",
+  description: "Soluciones tecnologicas para tu negocio",
 };
 
 export default function RootLayout({

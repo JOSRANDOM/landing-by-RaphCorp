@@ -59,11 +59,11 @@ export function ContactForm() {
 
   return (
     <div className="w-full">
-      <div className="flex justify-center mb-8">
+      <div className="flex justify-center mb-6 sm:mb-8">
         <div className="bg-zinc-200 dark:bg-zinc-800 p-1 rounded-full flex">
           <button
             onClick={() => handleMethodChange('email')}
-            className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+            className={`px-4 sm:px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
               method === 'email'
                 ? 'bg-zinc-900 text-white dark:bg-white dark:text-zinc-900'
                 : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white'
@@ -73,7 +73,7 @@ export function ContactForm() {
           </button>
           <button
             onClick={() => handleMethodChange('whatsapp')}
-            className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+            className={`px-4 sm:px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
               method === 'whatsapp'
                 ? 'bg-zinc-900 text-white dark:bg-white dark:text-zinc-900'
                 : 'text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white'

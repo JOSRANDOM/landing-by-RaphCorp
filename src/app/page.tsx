@@ -45,18 +45,18 @@ export default function Home() {
       <main className="min-h-screen bg-white dark:bg-black">
         <section
           id="inicio"
-          className="min-h-screen flex items-center justify-center pt-16"
+          className="min-h-screen flex items-center justify-center pt-16 px-4"
         >
-          <div className="max-w-4xl mx-auto px-4 text-center">
-            <h1 className="text-5xl md:text-6xl font-bold text-zinc-900 dark:text-white mb-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-zinc-900 dark:text-white mb-4 sm:mb-6">
               Bienvenido a Raph-Corp
             </h1>
-            <p className="text-xl text-zinc-600 dark:text-zinc-400 mb-8">
+            <p className="text-lg sm:text-xl text-zinc-600 dark:text-zinc-400 mb-6 sm:mb-8 px-4">
               Soluciones tecnologicas para tu negocio
             </p>
             <a
               href="#contacto"
-              className="inline-block bg-zinc-900 text-white px-8 py-3 rounded-full hover:bg-zinc-700 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-200 transition-colors"
+              className="inline-block bg-zinc-900 text-white px-6 sm:px-8 py-3 rounded-full hover:bg-zinc-700 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-200 transition-colors text-sm sm:text-base"
             >
               Comenzar
             </a>
@@ -65,13 +65,13 @@ export default function Home() {
 
         <section
           id="servicios"
-          className="min-h-screen flex items-center justify-center bg-zinc-50 dark:bg-zinc-900"
+          className="min-h-screen flex items-center justify-center bg-zinc-50 dark:bg-zinc-900 py-16 sm:py-20 px-4"
         >
-          <div className="max-w-4xl mx-auto px-4 text-center">
-            <h2 className="text-4xl font-bold text-zinc-900 dark:text-white mb-12">
+          <div className="max-w-5xl mx-auto text-center w-full">
+            <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-white mb-8 sm:mb-12">
               Servicios
             </h2>
-            <div className="grid md:grid-cols-3 gap-8 items-start">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 items-start">
               {services.map((service) => (
                 <ServiceCard
                   key={service.title}
@@ -86,13 +86,13 @@ export default function Home() {
 
         <section
           id="nosotros"
-          className="min-h-screen flex items-center justify-center"
+          className="min-h-screen flex items-center justify-center py-16 sm:py-20 px-4"
         >
-          <div className="max-w-4xl mx-auto px-4 text-center">
-            <h2 className="text-4xl font-bold text-zinc-900 dark:text-white mb-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-white mb-4 sm:mb-6">
               Nosotros
             </h2>
-            <p className="text-xl text-zinc-600 dark:text-zinc-400">
+            <p className="text-lg sm:text-xl text-zinc-600 dark:text-zinc-400 leading-relaxed">
               Somos un equipo apasionado por la tecnologia, dedicados a crear
               soluciones que impulsan el crecimiento de nuestros clientes.
             </p>
@@ -101,10 +101,10 @@ export default function Home() {
 
         <section
           id="contacto"
-          className="min-h-screen flex items-center justify-center bg-zinc-50 dark:bg-zinc-900"
+          className="min-h-screen flex items-center justify-center bg-zinc-50 dark:bg-zinc-900 py-16 sm:py-20 px-4"
         >
-          <div className="max-w-md mx-auto px-4 w-full">
-            <h2 className="text-4xl font-bold text-zinc-900 dark:text-white mb-8 text-center">
+          <div className="max-w-md mx-auto w-full">
+            <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-white mb-6 sm:mb-8 text-center">
               Contactanos
             </h2>
             <ContactForm />

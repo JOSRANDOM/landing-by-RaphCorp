@@ -9,11 +9,11 @@ interface ServiceCardProps {
 export function ServiceCard({ title, description, details }: ServiceCardProps) {
   return (
     <div className="relative">
-      <div className="group p-6 bg-white dark:bg-zinc-800 rounded-lg shadow-sm cursor-pointer transition-all duration-300 ease-out hover:scale-105 hover:shadow-xl relative z-0 hover:z-20">
-        <h3 className="text-xl font-semibold text-zinc-900 dark:text-white mb-4">
+      <div className="group p-5 sm:p-6 bg-white dark:bg-zinc-800 rounded-xl shadow-sm cursor-pointer transition-all duration-300 ease-out hover:scale-105 hover:shadow-xl relative z-0 hover:z-20">
+        <h3 className="text-lg sm:text-xl font-semibold text-zinc-900 dark:text-white mb-3 sm:mb-4">
           {title}
         </h3>
-        <p className="text-zinc-600 dark:text-zinc-400">
+        <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400">
           {description}
         </p>
         <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-300 ease-out">
