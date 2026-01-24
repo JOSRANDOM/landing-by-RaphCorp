@@ -1,36 +1,126 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Raph-Corp Landing
 
-## Getting Started
+Landing page built with Next.js, TypeScript, and Tailwind CSS following Clean Architecture principles.
 
-First, run the development server:
+## Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Next.js 16** - React framework
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Styling
+- **Docker** - Containerization
+
+## Project Structure
+
+```
+src/
+├── app/                        # Next.js App Router
+│   ├── layout.tsx              # Root layout
+│   ├── page.tsx                # Home page
+│   └── globals.css             # Global styles
+├── config/                     # Configuration
+│   └── env.ts                  # Environment variables
+├── domain/                     # Domain Layer
+│   ├── entities/               # Business entities
+│   ├── repositories/           # Repository interfaces
+│   └── usecases/               # Use case interfaces
+├── infrastructure/             # Infrastructure Layer
+│   └── api/                    # API client for backend
+├── application/                # Application Layer
+│   ├── services/               # Application services
+│   └── dtos/                   # Data transfer objects
+├── presentation/               # Presentation Layer
+│   ├── components/             # UI components
+│   │   ├── Navbar.tsx          # Navigation bar
+│   │   ├── ServiceCard.tsx     # Service card with hover effect
+│   │   └── Footer.tsx          # Footer with social links
+│   └── hooks/                  # Custom React hooks
+└── lib/                        # Utilities
+    └── utils.ts                # Helper functions
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Responsive navigation bar with mobile menu
+- Hero section with CTA
+- Services section with interactive cards (hover to expand)
+- About section
+- Contact form
+- Footer with social links (LinkedIn, Instagram)
+- Smooth scroll navigation
+- Dark mode support
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Setup
 
-## Learn More
+```bash
+# Install dependencies
+make install
 
-To learn more about Next.js, take a look at the following resources:
+# Copy environment variables
+cp .env.local.example .env.local
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Environment Variables
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Variable | Description |
+|----------|-------------|
+| `NEXT_PUBLIC_API_URL` | Backend API URL (default: http://localhost:3001/api) |
 
-## Deploy on Vercel
+## Commands
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Local Development
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+make dev          # Start dev server with hot reload
+make build        # Build for production
+make start        # Start production server
+make lint         # Run linter
+make setup        # Initial project setup
+```
+
+### Docker
+
+```bash
+make docker-build   # Build image
+make docker-up      # Run with Docker Compose
+make docker-dev     # Run dev with Docker Compose (hot reload)
+make docker-down    # Stop services
+make docker-logs    # View logs
+```
+
+Or use Docker Compose directly:
+
+```bash
+docker compose build
+docker compose up
+docker compose --profile dev up dev  # Development with hot reload
+```
+
+## Pages
+
+| Section | Description |
+|---------|-------------|
+| Inicio | Hero with welcome message and CTA |
+| Servicios | Three service cards (Desarrollo Web, Consultoria, Integraciones) |
+| Nosotros | About the team |
+| Contacto | Contact form |
+
+## Components
+
+### Navbar
+- Fixed navigation bar with blur backdrop
+- Logo and navigation links
+- "Contactame" CTA button
+- Responsive hamburger menu for mobile
+
+### ServiceCard
+- Interactive card with hover animation
+- Scales up on hover
+- Reveals additional details on hover
+
+### Footer
+- Social links (LinkedIn, Instagram)
+- Copyright notice
+
+## License
+
+MIT
