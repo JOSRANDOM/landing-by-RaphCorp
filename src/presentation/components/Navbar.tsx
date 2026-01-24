@@ -36,7 +36,7 @@ export function Navbar() {
               href="#contacto"
               className="bg-zinc-900 text-white px-5 py-2 rounded-full hover:bg-zinc-700 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-200 transition-colors"
             >
-              Contactame
+              Contactanos
             </Link>
           </div>
 
@@ -88,7 +88,7 @@ export function Navbar() {
                 className="bg-zinc-900 text-white px-5 py-2 rounded-full text-center hover:bg-zinc-700 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-200 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Contactame
+                Contactanos
               </Link>
             </div>
           </div>

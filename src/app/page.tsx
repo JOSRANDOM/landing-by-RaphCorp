@@ -1,4 +1,4 @@
-import { Navbar, ServiceCard, Footer } from "@/presentation/components";
+import { Navbar, ServiceCard, Footer, ContactForm } from "@/presentation/components";
 
 const services = [
   {
@@ -100,31 +100,9 @@ export default function Home() {
         >
           <div className="max-w-md mx-auto px-4 w-full">
             <h2 className="text-4xl font-bold text-zinc-900 dark:text-white mb-8 text-center">
-              Contactame
+              Contactanos
             </h2>
-            <form className="space-y-4">
-              <input
-                type="text"
-                placeholder="Nombre"
-                className="w-full px-4 py-3 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-zinc-500"
-              />
-              <input
-                type="email"
-                placeholder="Email"
-                className="w-full px-4 py-3 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-zinc-500"
-              />
-              <textarea
-                placeholder="Mensaje"
-                rows={4}
-                className="w-full px-4 py-3 rounded-lg border border-zinc-300 dark:border-zinc-700 bg-white dark:bg-zinc-800 text-zinc-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-zinc-500 resize-none"
-              />
-              <button
-                type="submit"
-                className="w-full bg-zinc-900 text-white py-3 rounded-lg hover:bg-zinc-700 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-200 transition-colors"
-              >
-                Enviar
-              </button>
-            </form>
+            <ContactForm />
           </div>
         </section>
       </main>
