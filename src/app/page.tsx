@@ -1,17 +1,7 @@
-import { Navbar, ServiceCard, Footer, ContactForm, MaintenancePage, PartnersSection, FoundersSection } from "@/presentation/components";
+import { Navbar, ServiceCard, Footer, ContactForm, MaintenancePage, PartnersSection, FoundersSection, TechStack } from "@/presentation/components";
 import { env } from "@/config/env";
 
 const services = [
-  {
-    title: "Desarrollo Web",
-    description: "Aplicaciones web modernas y escalables",
-    details: [
-      "Frontend con React y Next.js",
-      "Backend con Node.js y NestJS",
-      "Bases de datos SQL y NoSQL",
-      "Despliegue en la nube",
-    ],
-  },
   {
     title: "Consultoria",
     description: "Asesoria tecnica para tu proyecto",
@@ -20,6 +10,16 @@ const services = [
       "Mejores practicas de desarrollo",
       "Optimizacion de rendimiento",
       "Seguridad y escalabilidad",
+    ],
+  },
+  {
+    title: "Desarrollo Web",
+    description: "Aplicaciones web modernas y escalables",
+    details: [
+      "Frontend con React y Next.js",
+      "Backend con Node.js y NestJS",
+      "Bases de datos SQL y NoSQL",
+      "Despliegue en la nube",
     ],
   },
   {
@@ -81,6 +81,7 @@ export default function Home() {
                 />
               ))}
             </div>
+            <TechStack />
           </div>
         </section>
 

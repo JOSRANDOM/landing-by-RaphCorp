@@ -1,5 +1,3 @@
-'use client';
-
 interface ServiceCardProps {
   title: string;
   description: string;
@@ -9,26 +7,24 @@ interface ServiceCardProps {
 export function ServiceCard({ title, description, details }: ServiceCardProps) {
   return (
     <div className="relative">
-      <div className="group p-5 sm:p-6 bg-white dark:bg-zinc-800 rounded-xl shadow-sm cursor-pointer transition-all duration-300 ease-out hover:scale-105 hover:shadow-xl relative z-0 hover:z-20">
+      <div className="p-5 sm:p-6 bg-white dark:bg-zinc-800 rounded-xl shadow-sm">
         <h3 className="text-lg sm:text-xl font-semibold text-zinc-900 dark:text-white mb-3 sm:mb-4">
           {title}
         </h3>
-        <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400">
+        <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 mb-4">
           {description}
         </p>
-        <div className="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-300 ease-out">
-          <ul className="overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-300 pt-0 group-hover:pt-4">
-            {details.map((detail, index) => (
-              <li
-                key={index}
-                className="text-sm text-zinc-500 dark:text-zinc-400 flex items-center gap-2 py-1"
-              >
-                <span className="w-1.5 h-1.5 bg-zinc-400 dark:bg-zinc-500 rounded-full flex-shrink-0" />
-                {detail}
-              </li>
-            ))}
-          </ul>
-        </div>
+        <ul>
+          {details.map((detail, index) => (
+            <li
+              key={index}
+              className="text-sm text-zinc-500 dark:text-zinc-400 flex items-center gap-2 py-1"
+            >
+              <span className="w-1.5 h-1.5 bg-zinc-400 dark:bg-zinc-500 rounded-full flex-shrink-0" />
+              {detail}
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );

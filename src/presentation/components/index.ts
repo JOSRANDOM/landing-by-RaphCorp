@@ -5,3 +5,4 @@ export { ContactForm } from './ContactForm';
 export { MaintenancePage } from './MaintenancePage';
 export { PartnersSection } from './PartnersSection';
 export { FoundersSection } from './FoundersSection';
+export { TechStack } from './TechStack';
