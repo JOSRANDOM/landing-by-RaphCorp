@@ -1,4 +1,4 @@
-import { Navbar, ServiceCard, Footer, ContactForm, MaintenancePage } from "@/presentation/components";
+import { Navbar, ServiceCard, Footer, ContactForm, MaintenancePage, PartnersSection } from "@/presentation/components";
 import { env } from "@/config/env";
 
 const services = [
@@ -99,9 +99,11 @@ export default function Home() {
           </div>
         </section>
 
+        <PartnersSection />
+
         <section
           id="contacto"
-          className="min-h-screen flex items-center justify-center bg-zinc-50 dark:bg-zinc-900 py-16 sm:py-20 px-4"
+          className="min-h-screen flex items-center justify-center py-16 sm:py-20 px-4"
         >
           <div className="max-w-md mx-auto w-full">
             <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-white mb-6 sm:mb-8 text-center">
