@@ -1,4 +1,4 @@
-import { Navbar, ServiceCard, Footer, ContactForm, MaintenancePage, PartnersSection } from "@/presentation/components";
+import { Navbar, ServiceCard, Footer, ContactForm, MaintenancePage, PartnersSection, FoundersSection } from "@/presentation/components";
 import { env } from "@/config/env";
 
 const services = [
@@ -88,14 +88,17 @@ export default function Home() {
           id="nosotros"
           className="min-h-screen flex items-center justify-center py-16 sm:py-20 px-4"
         >
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-white mb-4 sm:mb-6">
-              Nosotros
-            </h2>
-            <p className="text-lg sm:text-xl text-zinc-600 dark:text-zinc-400 leading-relaxed">
-              Somos un equipo apasionado por la tecnologia, dedicados a crear
-              soluciones que impulsan el crecimiento de nuestros clientes.
-            </p>
+          <div className="max-w-5xl mx-auto">
+            <div className="text-center">
+              <h2 className="text-3xl sm:text-4xl font-bold text-zinc-900 dark:text-white mb-4 sm:mb-6">
+                Nosotros
+              </h2>
+              <p className="text-lg sm:text-xl text-zinc-600 dark:text-zinc-400 leading-relaxed max-w-4xl mx-auto">
+                Somos un equipo apasionado por la tecnologia, dedicados a crear
+                soluciones que impulsan el crecimiento de nuestros clientes.
+              </p>
+            </div>
+            <FoundersSection />
           </div>
         </section>
 

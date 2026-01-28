@@ -4,3 +4,4 @@ export { Footer } from './Footer';
 export { ContactForm } from './ContactForm';
 export { MaintenancePage } from './MaintenancePage';
 export { PartnersSection } from './PartnersSection';
+export { FoundersSection } from './FoundersSection';
