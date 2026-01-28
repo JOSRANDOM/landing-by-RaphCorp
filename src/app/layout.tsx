@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Raph-Corp",
   description: "Soluciones tecnologicas para tu negocio",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({
