@@ -40,30 +40,30 @@ const founders = [
 ];
 
 const FounderCard = ({ founder }: { founder: (typeof founders)[0] }) => (
-  <div className="flex-shrink-0 group">
-    <div className="bg-white dark:bg-zinc-800 border-2 border-zinc-200 dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-500 transition-all duration-300 p-3 sm:p-4 md:p-6 flex flex-col items-center w-48 sm:w-56 md:w-64 lg:w-72 h-64 sm:h-72 md:h-80 lg:h-96 rounded-xl sm:rounded-2xl relative overflow-hidden">
+  <div className="flex-shrink-0">
+    <div className="bg-white dark:bg-zinc-800 border-2 border-zinc-200 dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-500 transition-all duration-300 p-4 md:p-6 flex flex-col items-center w-[180px] md:w-64 lg:w-72 h-[260px] md:h-80 lg:h-96 rounded-xl md:rounded-2xl">
       {/* Avatar */}
-      <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-full bg-zinc-900 dark:bg-white flex items-center justify-center mb-2 sm:mb-3 md:mb-4 shadow-lg flex-shrink-0">
-        <span className="text-lg sm:text-xl md:text-2xl font-bold text-white dark:text-zinc-900">
+      <div className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-full bg-zinc-900 dark:bg-white flex items-center justify-center mb-2 md:mb-4 shadow-lg flex-shrink-0">
+        <span className="text-lg md:text-2xl font-bold text-white dark:text-zinc-900">
           {founder.initials}
         </span>
       </div>
 
       {/* Name and role */}
-      <h4 className="font-semibold text-zinc-900 dark:text-white text-center flex-shrink-0 text-sm sm:text-base">
+      <h4 className="font-semibold text-zinc-900 dark:text-white text-center flex-shrink-0 text-xs md:text-base">
         {founder.name}
       </h4>
-      <p className="text-[10px] sm:text-xs text-zinc-500 dark:text-zinc-400 mb-2 sm:mb-3 flex-shrink-0">
+      <p className="text-[10px] md:text-xs text-zinc-500 dark:text-zinc-400 mb-2 md:mb-3 flex-shrink-0">
         {founder.role}
       </p>
 
       {/* Message */}
-      <p className="text-zinc-600 dark:text-zinc-400 text-xs sm:text-sm text-center italic flex-1 overflow-hidden leading-relaxed">
+      <p className="text-zinc-600 dark:text-zinc-400 text-[11px] md:text-sm text-center italic flex-1 overflow-hidden leading-relaxed">
         "{founder.message}"
       </p>
 
       {/* Social icons */}
-      <div className="flex justify-center gap-3 sm:gap-4 mt-2 sm:mt-4 flex-shrink-0">
+      <div className="flex justify-center gap-3 md:gap-4 mt-2 md:mt-4 flex-shrink-0">
         {founder.linkedin && (
           <a
             href={founder.linkedin}
@@ -73,7 +73,7 @@ const FounderCard = ({ founder }: { founder: (typeof founders)[0] }) => (
             className="text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
           >
             <svg
-              className="w-4 h-4 sm:w-5 sm:h-5"
+              className="w-4 h-4 md:w-5 md:h-5"
               fill="currentColor"
               viewBox="0 0 24 24"
               aria-hidden="true"
@@ -91,7 +91,7 @@ const FounderCard = ({ founder }: { founder: (typeof founders)[0] }) => (
             className="text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
           >
             <svg
-              className="w-4 h-4 sm:w-5 sm:h-5"
+              className="w-4 h-4 md:w-5 md:h-5"
               fill="currentColor"
               viewBox="0 0 24 24"
               aria-hidden="true"
@@ -107,12 +107,22 @@ const FounderCard = ({ founder }: { founder: (typeof founders)[0] }) => (
 
 export function FoundersSection() {
   return (
-    <div className="mt-8 sm:mt-12 md:mt-16">
-      <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-zinc-900 dark:text-white mb-6 sm:mb-8 md:mb-10 text-center">
+    <div className="mt-10 md:mt-16 w-full">
+      <h3 className="text-xl md:text-2xl font-semibold text-zinc-900 dark:text-white mb-6 md:mb-10 text-center px-4">
         Conoce a nuestro equipo
       </h3>
 
-      <div className="relative overflow-hidden mx-[-1rem] sm:mx-0">
+      {/* Mobile: scroll horizontal */}
+      <div className="md:hidden overflow-x-auto pb-4 -webkit-overflow-scrolling-touch">
+        <div className="flex gap-3 px-4" style={{ width: "max-content" }}>
+          {founders.map((founder, index) => (
+            <FounderCard key={index} founder={founder} />
+          ))}
+        </div>
+      </div>
+
+      {/* Desktop: carousel animado */}
+      <div className="hidden md:block overflow-hidden">
         <style jsx>{`
           @keyframes scroll {
             0% {
@@ -130,12 +140,10 @@ export function FoundersSection() {
           }
         `}</style>
 
-        <div className="flex gap-3 sm:gap-4 md:gap-6 animate-scroll px-4 sm:px-0">
-          {/* Original set */}
+        <div className="flex gap-6 animate-scroll" style={{ width: "max-content" }}>
           {founders.map((founder, index) => (
             <FounderCard key={`original-${index}`} founder={founder} />
           ))}
-          {/* Duplicate for seamless loop */}
           {founders.map((founder, index) => (
             <FounderCard key={`duplicate-${index}`} founder={founder} />
           ))}
