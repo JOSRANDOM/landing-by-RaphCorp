@@ -9,6 +9,11 @@ const partners = [
     logo: "/jt-logo.jpg",
     link: "https://julio-trainer.netlify.app",
   },
+  {
+    name: "Gaffe Graphic Studio",
+    logo: "/gaffe-logo.png",
+    link: "https://www.instagram.com/gaffe_studio11/?utm_source=ig_web_button_share_sheet",
+  },
 ];
 
 export function PartnersSection() {
