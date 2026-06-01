@@ -1,12 +1,13 @@
 "use client";
 
+import Link from 'next/link';
+
 const founders = [
   {
     name: "Felipe Montenegro",
     role: "Technology Manager",
     initials: "FM",
-    message:
-      "La innovacion es nuestra esencia. Creamos soluciones tecnologicas que transforman ideas en realidad.",
+    message: "La innovación es nuestra esencia. Creamos soluciones tecnológicas que transforman ideas en realidad.",
     linkedin: "https://www.linkedin.com/in/felipe-rafael-montenegro-morriberon-a79a341b2/",
     instagram: "https://www.instagram.com/felipe_rmm/",
   },
@@ -14,8 +15,7 @@ const founders = [
     name: "Nicole Lescano",
     role: "Finance Manager",
     initials: "NL",
-    message:
-      "Construimos relaciones de confianza con nuestros clientes, asegurando transparencia y solidez financiera en cada proyecto.",
+    message: "Construimos relaciones de confianza con nuestros clientes, asegurando transparencia y solidez financiera.",
     linkedin: "https://www.linkedin.com/in/nicole-gonzales-lescano-007/",
     instagram: "https://www.instagram.com/nicole.lescn/",
   },
@@ -23,132 +23,66 @@ const founders = [
     name: "Uzhiely Cruz",
     role: "Product Manager",
     initials: "UC",
-    message:
-      "Transformamos las necesidades de nuestros clientes en productos que generan valor y superan expectativas.",
+    message: "Transformamos las necesidades de nuestros clientes en productos que generan valor y superan expectativas.",
     linkedin: "https://www.linkedin.com/in/uzhiely1824/",
-    instagram: null,
+    instagram: "https://www.instagram.com/uzhielycb/",
   },
   {
     name: "Joseph Mori",
     role: "Founding Partner",
     initials: "JM",
-    message:
-      "Nuestro compromiso es impulsar el exito de cada cliente con soluciones que marcan la diferencia.",
+    message: "Nuestro compromiso es impulsar el éxito de cada cliente con soluciones que marcan la diferencia.",
     linkedin: "https://www.linkedin.com/in/joseph-mori-herrera-007139272/",
     instagram: "https://www.instagram.com/joseph_mori_herrera/",
   },
 ];
 
-const FounderCard = ({ founder }: { founder: (typeof founders)[0] }) => (
-  <div className="flex-shrink-0">
-    <div className="bg-white dark:bg-zinc-800 border-2 border-zinc-200 dark:border-zinc-700 hover:border-zinc-400 dark:hover:border-zinc-500 transition-all duration-300 p-4 md:p-6 flex flex-col items-center w-[180px] md:w-64 lg:w-72 h-[260px] md:h-80 lg:h-96 rounded-xl md:rounded-2xl">
-      {/* Avatar */}
-      <div className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-full bg-zinc-900 dark:bg-white flex items-center justify-center mb-2 md:mb-4 shadow-lg flex-shrink-0">
-        <span className="text-lg md:text-2xl font-bold text-white dark:text-zinc-900">
-          {founder.initials}
-        </span>
-      </div>
-
-      {/* Name and role */}
-      <h4 className="font-semibold text-zinc-900 dark:text-white text-center flex-shrink-0 text-xs md:text-base">
-        {founder.name}
-      </h4>
-      <p className="text-[10px] md:text-xs text-zinc-500 dark:text-zinc-400 mb-2 md:mb-3 flex-shrink-0">
-        {founder.role}
-      </p>
-
-      {/* Message */}
-      <p className="text-zinc-600 dark:text-zinc-400 text-[11px] md:text-sm text-center italic flex-1 overflow-hidden leading-relaxed">
-        "{founder.message}"
-      </p>
-
-      {/* Social icons */}
-      <div className="flex justify-center gap-3 md:gap-4 mt-2 md:mt-4 flex-shrink-0">
-        {founder.linkedin && (
-          <a
-            href={founder.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`LinkedIn de ${founder.name}`}
-            className="text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
-          >
-            <svg
-              className="w-4 h-4 md:w-5 md:h-5"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-            </svg>
-          </a>
-        )}
-        {founder.instagram && (
-          <a
-            href={founder.instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`Instagram de ${founder.name}`}
-            className="text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors"
-          >
-            <svg
-              className="w-4 h-4 md:w-5 md:h-5"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-              aria-hidden="true"
-            >
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
-            </svg>
-          </a>
-        )}
-      </div>
-    </div>
-  </div>
-);
-
 export function FoundersSection() {
   return (
-    <div className="mt-10 md:mt-16 w-full">
-      <h3 className="text-xl md:text-2xl font-semibold text-zinc-900 dark:text-white mb-6 md:mb-10 text-center px-4">
-        Conoce a nuestro equipo
-      </h3>
-
-      {/* Mobile: scroll horizontal */}
-      <div className="md:hidden overflow-x-auto pb-4 -webkit-overflow-scrolling-touch">
-        <div className="flex gap-3 px-4" style={{ width: "max-content" }}>
-          {founders.map((founder, index) => (
-            <FounderCard key={index} founder={founder} />
-          ))}
+    <div className="grid grid-cols-2 gap-px bg-[#0F1C3F]">
+      {founders.map((founder, i) => (
+        <div
+          key={i}
+          className="bg-[#04091C] p-5 lg:p-6 group hover:bg-[#060C22] transition-colors duration-300"
+        >
+          <div className="w-8 h-8 bg-[#5B8DFF] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
+            <span className="text-[9px] font-black text-[#04091C] tracking-tight leading-none">{founder.initials}</span>
+          </div>
+          <p className="text-white text-sm font-semibold leading-tight">{founder.name}</p>
+          <p className="text-[10px] uppercase tracking-widest text-[#7B8FBF] font-mono mt-0.5 mb-3">{founder.role}</p>
+          <p className="text-[11px] text-[#4A5E8A] leading-relaxed italic group-hover:text-[#7B8FBF] transition-colors duration-300 line-clamp-3">
+            &ldquo;{founder.message}&rdquo;
+          </p>
+          <div className="flex gap-3 mt-4">
+            {founder.linkedin && (
+              <Link
+                href={founder.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`LinkedIn de ${founder.name}`}
+                className="text-[#4A5E8A] hover:text-[#5B8DFF] transition-colors"
+              >
+                <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                </svg>
+              </Link>
+            )}
+            {founder.instagram && (
+              <Link
+                href={founder.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Instagram de ${founder.name}`}
+                className="text-[#4A5E8A] hover:text-[#5B8DFF] transition-colors"
+              >
+                <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" />
+                </svg>
+              </Link>
+            )}
+          </div>
         </div>
-      </div>
-
-      {/* Desktop: carousel animado */}
-      <div className="hidden md:block overflow-hidden">
-        <style jsx>{`
-          @keyframes scroll {
-            0% {
-              transform: translateX(0);
-            }
-            100% {
-              transform: translateX(-50%);
-            }
-          }
-          .animate-scroll {
-            animation: scroll 20s linear infinite;
-          }
-          .animate-scroll:hover {
-            animation-play-state: paused;
-          }
-        `}</style>
-
-        <div className="flex gap-6 animate-scroll" style={{ width: "max-content" }}>
-          {founders.map((founder, index) => (
-            <FounderCard key={`original-${index}`} founder={founder} />
-          ))}
-          {founders.map((founder, index) => (
-            <FounderCard key={`duplicate-${index}`} founder={founder} />
-          ))}
-        </div>
-      </div>
+      ))}
     </div>
   );
 }
