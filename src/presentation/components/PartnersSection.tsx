@@ -14,6 +14,11 @@ const partners = [
     logo: "/gaffe-logo.png",
     link: "https://www.instagram.com/gaffe_studio11/?utm_source=ig_web_button_share_sheet",
   },
+  {
+    name: "FitBlood",
+    logo: "/fitblood-logo.png",
+    link: "https://web-fit-blood.vercel.app",
+  },
 ];
 
 export function PartnersSection() {
